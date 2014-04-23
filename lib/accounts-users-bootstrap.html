@@ -1,0 +1,12 @@
+<template name="loginForm">
+  <form role="form">
+    {{#each fields}}
+      <div class="form-group {{hasError}}">
+        <label for="AU_field_{{name}}" class="control-label">{{Name}}</label>
+        <input type="{{type}}" class="form-control" id="AU_field_{{name}}" placeholder="{{Name}}">
+        <p class="help-block {{showError}}">Example block-level help text here.</p>
+      </div>        
+    {{/each}}
+    <button type="submit" class="btn btn-default">{{buttonText}}</button>
+  </form>
+</template>

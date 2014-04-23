@@ -1,13 +1,13 @@
 {
-	"name": "accounts-users-bootstrap",
-	"description": "Users' Accounts Systems templates styled for Twitter Bootstrap.",
-	"homepage": "http://accounts-users.meteor.com",
-	"author": "Luca Mussi <ing.luca.mussi@gmail.com>",
-	"version": "0.0.1",
-	"git": "https://github.com/splendido/accounts-users-bootstrap.git",
-	"packages": {
-		"accounts-users-core": {
-			"git": "https://github.com/splendido/accounts-users-core.git"
-		}
-	}
+    "name": "accounts-users-bootstrap",
+    "description": "Users' Accounts Systems templates styled for Twitter Bootstrap.",
+    "homepage": "http://accounts-users.meteor.com",
+    "author": "Luca Mussi <ing.luca.mussi@gmail.com>",
+    "version": "0.0.1",
+    "git": "https://github.com/splendido/accounts-users-bootstrap.git",
+    "packages": {
+        "accounts-users-core": {
+            "path": "/home/idel/Projects/Accounts-Users/accounts-users-core"
+        }
+    }
 }
