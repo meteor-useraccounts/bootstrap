@@ -3,12 +3,27 @@ Package.describe({
 });
 
 Package.on_use(function(api, where) {
-	api.imply('accounts-users-core', ['client', 'server']);
-    api.use(['templating'], 'client');
+    api.use([
+        'templating',
+        'less'
+    ], 'client');
+
     api.add_files([
         'lib/accounts-users-bootstrap.html',
-        'lib/accounts-users-bootstrap.js'
+        'lib/accounts-users-bootstrap.js',
+        'lib/accounts-users-bootstrap.less'
     ], ['client']);
+
+    api.use([
+        'service-configuration',
+        'accounts-base',
+    ], ['client', 'server']);
+
+    api.imply([
+        'service-configuration',
+        'accounts-base',
+        'accounts-users-core'
+    ], ['client', 'server']);
 });
 
 Package.on_test(function(api) {

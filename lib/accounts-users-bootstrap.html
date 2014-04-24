@@ -1,13 +1,75 @@
 <template name="loginForm">
-  <form role="form">
-    {{#each fields}}
-      <div class="form-group {{hasError}} has-feedback">
-        <label for="AU_field_{{name}}" class="control-label">{{Name}}</label>
-        <input type="{{type}}" class="form-control" id="AU_field_{{name}}" placeholder="{{Name}}">
-        <span class="glyphicon glyphicon-remove form-control-feedback {{showError}}"></span>
-        <p class="help-block {{showError}}">{{errorText}}</p>
-      </div>        
-    {{/each}}
-    <button type="submit" class="btn btn-default">{{buttonText}}</button>
-  </form>
+  <div class="au">
+    {{#if aufpwd}}
+      <h3>Reset your Password</h3>
+    {{/if}}
+    {{#if ausgin}}
+      {{#if otherLoginServices}}
+        <div class="au-social">
+          {{#each loginServices}}
+            {{> auSocial}}
+          {{/each}}
+          {{#if passwordLoginService}}
+            <div class="email-option">
+              <strong class="line-thru or-sign-in">OR</strong>
+            </div>
+          {{/if}}
+        </div>
+      {{/if}}
+      {{#unless otherLoginServices}}
+        <div class="email-option">
+          <h3>Sign In</h3>
+        </div>
+      {{/unless}}
+    {{/if}}
+    {{#if ausgup}}
+      <h3>Create an Account</h3>
+      <p class="au-signin-cta">If you already have an account <a href="#" id="au-sgin">sign in</a>.</p>
+    {{/if}}
+    {{#if passwordLoginService}}
+      <form role="form" class="au-form">
+        {{#each fields}}
+          {{#if displayField}}
+            <div class="form-group {{hasError}} {{hasFeedback}}">
+              {{# if displayFormLabels}}
+                <label for="AU_field_{{name}}" class="control-label">{{displayName}}</label>
+              {{/if}}
+              <input type="{{type}}" class="form-control" id="AU_field_{{name}}" placeholder="{{placeholder}}">
+              {{#if hasFeedback}}
+                <span class="glyphicon glyphicon-remove form-control-feedback {{showError}}"></span>
+              {{/if}}
+              <p class="help-block {{showError}}">{{errorText}}</p>
+            </div>     
+          {{/if}}   
+        {{/each}}
+        {{#unless aufpwd}}
+          <p><a href="#" id="au-fpwd">Forgot password?</a></p>
+        {{/unless}}
+        <div class="btn btn-default" id="au-btn">{{buttonText}}</div>
+      </form>
+      {{#unless ausgup}}
+        <p class="au-signup-cta">Don't have an account? <a href="#" id="au-sgup">Sign Up</a></p>
+      {{/unless}}
+    {{/if}}    
+  </div>
+</template>
+
+
+
+<template name='auSocial'>
+  <button class="btn" id="au-{{this}}" name="{{this}}">
+    {{#if unconfigured}}
+      {{#if google}}
+        <i class="fa fa-{{this}}-plus"></i> Configure {{capitalize this}}
+      {{else}}
+        <i class="fa fa-{{this}}"></i> Configure {{capitalize this}}
+      {{/if}}
+    {{else}}
+      {{#if google}}
+        <i class="fa fa-{{this}}-plus"></i> Sign in with {{capitalize this}}
+      {{else}}
+        <i class="fa fa-{{this}}"></i> Sign in with {{capitalize this}}
+      {{/if}}
+    {{/if}}
+  </button>
 </template>
