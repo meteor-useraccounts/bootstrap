@@ -1,5 +1,5 @@
 Package.describe({
-    summary: "Users' Accounts Systems templates styled for Twitter Bootstrap."
+    summary: "Accounts Templates styled for Twitter Bootstrap."
 });
 
 Package.on_use(function(api, where) {
@@ -9,9 +9,9 @@ Package.on_use(function(api, where) {
     ], 'client');
 
     api.add_files([
-        'lib/accounts-users-bootstrap.html',
-        'lib/accounts-users-bootstrap.js',
-        'lib/accounts-users-bootstrap.less'
+        'lib/accounts-templates-bootstrap.html',
+        'lib/accounts-templates-bootstrap.js',
+        'lib/accounts-templates-bootstrap.less'
     ], ['client']);
 
     api.use([
@@ -22,12 +22,12 @@ Package.on_use(function(api, where) {
     api.imply([
         'service-configuration',
         'accounts-base',
-        'accounts-users-core'
+        'accounts-templates-core'
     ], ['client', 'server']);
 });
 
 Package.on_test(function(api) {
-    api.use('accounts-users-bootstrap');
+    api.use('accounts-templates-bootstrap');
     api.use(['tinytest', 'test-helpers'], ['client', 'server']);
-    api.add_files('tests/accounts-users-bootstrap_tests.js', ['client', 'server']);
+    api.add_files('tests/accounts-templates-bootstrap_tests.js', ['client', 'server']);
 });

@@ -1,13 +1,13 @@
 <template name="loginForm">
-  <div class="au">
-    {{#if aufpwd}}
+  <div class="at">
+    {{#if atfpwd}}
       <h3>Reset your Password</h3>
     {{/if}}
-    {{#if ausgin}}
+    {{#if atsgin}}
       {{#if otherLoginServices}}
-        <div class="au-social">
+        <div class="at-social">
           {{#each loginServices}}
-            {{> auSocial}}
+            {{> atSocial}}
           {{/each}}
           {{#if passwordLoginService}}
             <div class="email-option">
@@ -22,12 +22,12 @@
         </div>
       {{/unless}}
     {{/if}}
-    {{#if ausgup}}
+    {{#if atsgup}}
       <h3>Create an Account</h3>
-      <p class="au-signin-cta">If you already have an account <a href="#" id="au-sgin">sign in</a>.</p>
+      <p class="at-signin-cta">If you already have an account <a href="#" id="at-sgin">sign in</a>.</p>
     {{/if}}
     {{#if passwordLoginService}}
-      <form role="form" class="au-form">
+      <form role="form" class="at-form">
         {{#each fields}}
           {{#if displayField}}
             <div class="form-group {{hasError}} {{hasFeedback}}">
@@ -42,13 +42,13 @@
             </div>     
           {{/if}}   
         {{/each}}
-        {{#unless aufpwd}}
-          <p><a href="#" id="au-fpwd">Forgot password?</a></p>
+        {{#unless atfpwd}}
+          <p><a href="#" id="at-fpwd">Forgot password?</a></p>
         {{/unless}}
-        <div class="btn btn-default" id="au-btn">{{buttonText}}</div>
+        <div class="btn btn-default" id="at-btn">{{buttonText}}</div>
       </form>
-      {{#unless ausgup}}
-        <p class="au-signup-cta">Don't have an account? <a href="#" id="au-sgup">Sign Up</a></p>
+      {{#unless atsgup}}
+        <p class="at-signup-cta">Don't have an account? <a href="#" id="at-sgup">Sign Up</a></p>
       {{/unless}}
     {{/if}}    
   </div>
@@ -56,8 +56,8 @@
 
 
 
-<template name='auSocial'>
-  <button class="btn" id="au-{{this}}" name="{{this}}">
+<template name='atSocial'>
+  <button class="btn" id="at-{{this}}" name="{{this}}">
     {{#if unconfigured}}
       {{#if google}}
         <i class="fa fa-{{this}}-plus"></i> Configure {{capitalize this}}

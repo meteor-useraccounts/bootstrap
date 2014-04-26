@@ -1,12 +1,12 @@
-[![Build Status](https://travis-ci.org/splendido/accounts-users-bootstrap.svg?branch=master)](https://travis-ci.org/splendido/accounts-users-bootstrap)
-accounts-users-bootstrap
+[![Build Status](https://travis-ci.org/splendido/accounts-templates-bootstrap.svg?branch=master)](https://travis-ci.org/splendido/accounts-templates-bootstrap)
+accounts-templates-bootstrap
 ========================
 
 Meteor sign up and sign in templates styled for twitter Bootstrap
 
-This package depends on [accounts-users-core](https://github.com/splendido/accounts-users-core.git)
+This package depends on [accounts-templates-core](https://github.com/splendido/accounts-templates-core.git)
 
-See it live [here](http://accounts-users.meteor.com)
+See it live [here](http://accounts-templates.meteor.com)
 
 
 Known Issues
