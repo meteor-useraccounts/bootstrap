@@ -7,8 +7,8 @@
     "git": "https://github.com/splendido/accounts-templates-bootstrap.git",
     "packages": {
         "accounts-templates-core": {
-            "path": "/home/idel/Projects/AccountsTemplates/accounts-templates-core",
-            "_git": "https://github.com/splendido/accounts-templates-core.git"
+            "_path": "/home/idel/Projects/AccountsTemplates/accounts-templates-core",
+            "git": "https://github.com/splendido/accounts-templates-core.git"
         }
     }
 }
