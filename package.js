@@ -4,6 +4,10 @@ Package.describe({
 
 Package.on_use(function(api, where) {
     api.use([
+        'service-configuration',
+        'accounts-base',
+        'accounts-templates-core',
+        'accounts-merge',
         'templating',
         'less'
     ], 'client');
@@ -14,20 +18,33 @@ Package.on_use(function(api, where) {
         'lib/accounts-templates-bootstrap.less'
     ], ['client']);
 
+    /*
     api.use([
         'service-configuration',
         'accounts-base',
     ], ['client', 'server']);
+    */
+
+    api.use([
+        'service-configuration',
+        'accounts-password',
+        'accounts-base',
+        'accounts-templates-core',
+    ], 'server');
 
     api.imply([
-        'service-configuration',
         'accounts-base',
-        'accounts-templates-core'
+        'accounts-templates-core',
+        'service-configuration',
     ], ['client', 'server']);
 });
 
 Package.on_test(function(api) {
-    api.use('accounts-templates-bootstrap');
+    api.use([
+        'accounts-templates-bootstrap',
+        'accounts-templates-core',
+        //'accounts-merge',
+    ]);
     api.use(['tinytest', 'test-helpers'], ['client', 'server']);
     api.add_files('tests/accounts-templates-bootstrap_tests.js', ['client', 'server']);
 });

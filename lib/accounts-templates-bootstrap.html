@@ -1,75 +1,81 @@
 <template name="loginForm">
   <div class="at">
-    {{#if atfpwd}}
-      <h3>Reset your Password</h3>
-    {{/if}}
-    {{#if atsgin}}
-      {{#if otherLoginServices}}
+    {{#unless currentUser}}
+      {{#if atfpwd}}
+        <h3>Reset your Password</h3>
+      {{/if}}
+      {{#if atsgin}}
+        {{#if otherLoginServices}}
+          <div class="at-social">
+            {{#each loginServices}}
+              {{> atSocial}}
+            {{/each}}
+            {{#if passwordLoginService}}
+              <div class="email-option">
+                <strong class="line-thru or-sign-in">OR</strong>
+              </div>
+            {{/if}}
+          </div>
+        {{/if}}
+        {{#unless otherLoginServices}}
+          <div class="email-option">
+            <h3>Sign In</h3>
+          </div>
+        {{/unless}}
+      {{/if}}
+      {{#if atsgup}}
+        <h3>Create an Account</h3>
+        <p class="at-signin-cta">If you already have an account <a href="#" id="at-sgin">sign in</a>.</p>
+      {{/if}}
+      {{#if passwordLoginService}}
+        <form role="form" class="at-form">
+          {{#each fields}}
+            {{#if displayField}}
+              <div class="form-group {{hasError}} {{hasFeedback}}">
+                {{# if displayFormLabels}}
+                  <label for="AT_field_{{name}}" class="control-label">{{displayName}}</label>
+                {{/if}}
+                <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}">
+                {{#if hasFeedback}}
+                  <span class="glyphicon glyphicon-remove form-control-feedback {{showError}}"></span>
+                {{/if}}
+                <p class="help-block {{showError}}">{{errorText}}</p>
+              </div>     
+            {{/if}}   
+          {{/each}}
+          {{#unless atfpwd}}
+            <p><a href="#" id="at-fpwd">Forgot password?</a></p>
+          {{/unless}}
+          <div class="btn btn-default" id="at-btn">{{buttonText}}</div>
+        </form>
+        {{#unless atsgup}}
+          <p class="at-signup-cta">Don't have an account? <a href="#" id="at-sgup">Sign Up</a></p>
+        {{/unless}}
+      {{/if}}
+    {{else}}
+        <h3>Hi {{signedInAs}}</h3>
         <div class="at-social">
           {{#each loginServices}}
             {{> atSocial}}
           {{/each}}
-          {{#if passwordLoginService}}
-            <div class="email-option">
-              <strong class="line-thru or-sign-in">OR</strong>
-            </div>
-          {{/if}}
         </div>
-      {{/if}}
-      {{#unless otherLoginServices}}
-        <div class="email-option">
-          <h3>Sign In</h3>
-        </div>
-      {{/unless}}
-    {{/if}}
-    {{#if atsgup}}
-      <h3>Create an Account</h3>
-      <p class="at-signin-cta">If you already have an account <a href="#" id="at-sgin">sign in</a>.</p>
-    {{/if}}
-    {{#if passwordLoginService}}
-      <form role="form" class="at-form">
-        {{#each fields}}
-          {{#if displayField}}
-            <div class="form-group {{hasError}} {{hasFeedback}}">
-              {{# if displayFormLabels}}
-                <label for="AU_field_{{name}}" class="control-label">{{displayName}}</label>
-              {{/if}}
-              <input type="{{type}}" class="form-control" id="AU_field_{{name}}" placeholder="{{placeholder}}">
-              {{#if hasFeedback}}
-                <span class="glyphicon glyphicon-remove form-control-feedback {{showError}}"></span>
-              {{/if}}
-              <p class="help-block {{showError}}">{{errorText}}</p>
-            </div>     
-          {{/if}}   
-        {{/each}}
-        {{#unless atfpwd}}
-          <p><a href="#" id="at-fpwd">Forgot password?</a></p>
-        {{/unless}}
-        <div class="btn btn-default" id="at-btn">{{buttonText}}</div>
-      </form>
-      {{#unless atsgup}}
-        <p class="at-signup-cta">Don't have an account? <a href="#" id="at-sgup">Sign Up</a></p>
-      {{/unless}}
-    {{/if}}    
+        <div class="btn btn-default" id="at-btn-logout">Logout</div>
+    {{/unless}}    
   </div>
 </template>
 
 
 
 <template name='atSocial'>
-  <button class="btn" id="at-{{this}}" name="{{this}}">
+  <button class="btn {{disabled}}" id="at-{{this}}" name="{{this}}">
     {{#if unconfigured}}
-      {{#if google}}
-        <i class="fa fa-{{this}}-plus"></i> Configure {{capitalize this}}
-      {{else}}
-        <i class="fa fa-{{this}}"></i> Configure {{capitalize this}}
-      {{/if}}
+        <i class="{{iconClass}}"></i> Configure {{capitalize this}}
     {{else}}
-      {{#if google}}
-        <i class="fa fa-{{this}}-plus"></i> Sign in with {{capitalize this}}
-      {{else}}
-        <i class="fa fa-{{this}}"></i> Sign in with {{capitalize this}}
-      {{/if}}
+        {{#if currentUser}}
+          <i class="{{iconClass}}"></i> Add {{capitalize this}}
+        {{else}}
+          <i class="{{iconClass}}"></i> Sign in with {{capitalize this}}
+        {{/if}}
     {{/if}}
   </button>
 </template>

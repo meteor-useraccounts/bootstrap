@@ -42,8 +42,10 @@
   }
 }
 
+
 .at-social {
   margin-top: 10px;
+
 
   button {
     display: block;
@@ -64,9 +66,15 @@
       border-right: 1px solid rgba(0,0,0,0.2);
     }
 
+
     &#at-facebook {
       background: #3B5998;
       color: #fff;
+
+      &.disabled {
+        color: #ddd;
+        background: #666666;
+      }
 
       &:hover {
         background: #2C4780;
@@ -77,6 +85,11 @@
       background: #338AB0;
       color: #fff;
 
+      &.disabled {
+        color: #ddd;
+        background: #666666;
+      }
+
       &:hover {
         background: #0571A6;
       }
@@ -85,6 +98,11 @@
     &#at-twitter {
       background: #4099FF;
       color: #fff;
+
+      &.disabled {
+        color: #ddd;
+        background: #666666;
+      }
 
       &:hover {
         background: #3288EB;
@@ -95,6 +113,11 @@
       background: #db5a3c;
       color: #fff;
 
+      &.disabled {
+        color: #ddd;
+        background: #666666;
+      }
+
       &:hover {
         background: #CA4C2E;
       }
@@ -104,10 +127,17 @@
       background: #666;
       color: #fff;
 
+      &.disabled {
+        color: #ddd;
+        background: #666666;
+      }
+
       &:hover {
         background: #555;
       }
     }
+
+
   }
 }
 
