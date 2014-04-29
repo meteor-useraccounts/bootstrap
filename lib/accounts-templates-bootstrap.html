@@ -27,6 +27,16 @@
         <h3>Create an Account</h3>
         <p class="at-signin-cta">If you already have an account <a href="#" id="at-sgin">sign in</a>.</p>
       {{/if}}
+      {{#if overallError}}
+        <div id="atError">
+          <div class='alert alert-danger'>{{overallError}}</div>
+        </div>
+      {{/if}}
+      {{#if result}}
+        <div id="atResult">
+          <div class='alert alert-success'>{{result}}</div>
+        </div>
+      {{/if}}
       {{#if passwordLoginService}}
         <form role="form" class="at-form">
           {{#each fields}}
