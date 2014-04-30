@@ -43,7 +43,6 @@ Package.on_test(function(api) {
     api.use([
         'accounts-templates-bootstrap',
         'accounts-templates-core',
-        //'accounts-merge',
     ]);
     api.use(['tinytest', 'test-helpers'], ['client', 'server']);
     api.add_files('tests/accounts-templates-bootstrap_tests.js', ['client', 'server']);
