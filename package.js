@@ -8,6 +8,7 @@ Package.on_use(function(api, where) {
         'accounts-base',
         'accounts-templates-core',
         'accounts-merge',
+        'accounts-t9n',
         'templating',
         'less'
     ], 'client');

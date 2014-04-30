@@ -2,7 +2,7 @@
   <div class="at">
     {{#unless currentUser}}
       {{#if atfpwd}}
-        <h3>Reset your Password</h3>
+        <h3> {{t9n "resetYourPassword"}} </h3>
       {{/if}}
       {{#if atsgin}}
         {{#if otherLoginServices}}
@@ -12,20 +12,20 @@
             {{/each}}
             {{#if passwordLoginService}}
               <div class="email-option">
-                <strong class="line-thru or-sign-in">OR</strong>
+                <strong class="line-thru or-sign-in">{{t9n "OR"}}</strong>
               </div>
             {{/if}}
           </div>
         {{/if}}
         {{#unless otherLoginServices}}
           <div class="email-option">
-            <h3>Sign In</h3>
+            <h3>{{t9n "signIn"}}</h3>
           </div>
         {{/unless}}
       {{/if}}
       {{#if atsgup}}
-        <h3>Create an Account</h3>
-        <p class="at-signin-cta">If you already have an account <a href="#" id="at-sgin">sign in</a>.</p>
+        <h3>{{t9n "createAccount"}}</h3>
+        <p class="at-signin-cta">{{t9n "ifYouAlreadyHaveAnAccount"}} <a href="#" id="at-sgin">{{t9n "signin"}}</a>.</p>
       {{/if}}
       {{#if overallError}}
         <div id="atError">
@@ -41,25 +41,27 @@
         <form role="form" class="at-form">
           {{#each fields}}
             {{#if displayField}}
-              <div class="form-group {{hasError}} {{hasFeedback}}">
-                {{# if displayFormLabels}}
-                  <label for="AT_field_{{name}}" class="control-label">{{displayName}}</label>
+              <div class="form-group {{#if hasError}}has-error{{/if}} {{#if hasFeedback}}has-feedback{{/if}}">
+                {{#if displayFormLabels}}
+                  <label for="AT_field_{{name}}" class="control-label">
+                    {{displayName}} {{#unless required}}({{t9n "optional"}}){{/unless}}
+                  </label>
                 {{/if}}
                 <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}">
                 {{#if hasFeedback}}
-                  <span class="glyphicon glyphicon-remove form-control-feedback {{showError}}"></span>
+                  <span class="glyphicon glyphicon-remove form-control-feedback {{#unless showError}}hide{{/unless}}"></span>
                 {{/if}}
-                <p class="help-block {{showError}}">{{errorText}}</p>
+                <p class="help-block {{#unless showError}}hide{{/unless}}">{{errorText}}</p>
               </div>     
             {{/if}}   
           {{/each}}
           {{#unless atfpwd}}
-            <p><a href="#" id="at-fpwd">Forgot password?</a></p>
+            <p><a href="#" id="at-fpwd">{{t9n "forgotPassword"}}</a></p>
           {{/unless}}
           <div class="btn btn-default" id="at-btn">{{buttonText}}</div>
         </form>
         {{#unless atsgup}}
-          <p class="at-signup-cta">Don't have an account? <a href="#" id="at-sgup">Sign Up</a></p>
+          <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="#" id="at-sgup">{{t9n "signUp"}}</a></p>
         {{/unless}}
       {{/if}}
     {{else}}
@@ -69,7 +71,7 @@
             {{> atSocial}}
           {{/each}}
         </div>
-        <div class="btn btn-default" id="at-btn-logout">Logout</div>
+        <div class="btn btn-default" id="at-btn-logout">{{t9n "signOut"}}</div>
     {{/unless}}    
   </div>
 </template>
@@ -79,12 +81,13 @@
 <template name='atSocial'>
   <button class="btn {{disabled}}" id="at-{{this}}" name="{{this}}">
     {{#if unconfigured}}
-        <i class="{{iconClass}}"></i> Configure {{capitalize this}}
+        <i class="{{iconClass}}"></i> {{t9n "configure"}} {{capitalize this}}
     {{else}}
         {{#if currentUser}}
           <i class="{{iconClass}}"></i> Add {{capitalize this}}
         {{else}}
-          <i class="{{iconClass}}"></i> Sign in with {{capitalize this}}
+          <i class="{{iconClass}}"></i>
+          {{t9n "signIn"}}&nbsp;{{t9n "with"}}&nbsp;{{capitalize this}}
         {{/if}}
     {{/if}}
   </button>
