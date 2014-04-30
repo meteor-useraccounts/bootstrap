@@ -6,7 +6,7 @@ Meteor sign up and sign in templates styled for twitter Bootstrap
 
 This package depends on [accounts-templates-core](https://github.com/splendido/accounts-templates-core.git)
 
-See it live [here](http://accounts-templates.meteor.com)
+Learn more at [here](http://accounts-templates.meteor.com)
 
 
 Known Issues
