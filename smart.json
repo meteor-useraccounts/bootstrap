@@ -6,6 +6,8 @@
     "version": "0.0.3",
     "git": "https://github.com/splendido/accounts-templates-bootstrap.git",
     "packages": {
-        "accounts-templates-core": "0.0.3"
+        "accounts-templates-core": {
+      		"git": "https://github.com/splendido/accounts-templates-core.git"
+    	}
     }
 }
