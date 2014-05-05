@@ -35,7 +35,7 @@
       {{/if}}
       {{#if stateIs 'sgup'}}
         <h3>{{t9n "createAccount"}}</h3>
-        <p class="at-signin-cta">{{t9n "ifYouAlreadyHaveAnAccount"}} <a href="{{signInLink}}" id="at-sgin">{{t9n "signin"}}</a>.</p>
+        <p class="at-signin-cta">{{t9n "ifYouAlreadyHaveAnAccount"}} <a href="{{signInLink}}" id="at-sgin" class="{{disabled}}">{{t9n "signin"}}</a>.</p>
       {{/if}}
       {{#if overallError}}
         <div id="atError">
@@ -55,12 +55,12 @@
             {{/if}}   
           {{/each}}
           {{#if showForgotPassword}}
-            <p><a href="{{forgotPwdLink}}" id="at-fpwd">{{t9n "forgotPassword"}}</a></p>
+            <p><a href="{{forgotPwdLink}}" id="at-fpwd" class="{{disabled}}">{{t9n "forgotPassword"}}</a></p>
           {{/if}}
-          <div class="btn btn-lg btn-default" id="at-btn">{{buttonText}}</div>
+          <div class="btn btn-lg btn-default {{disabled}}" id="at-btn">{{buttonText}}</div>
         </form>
         {{#unless stateIs 'sgup'}}
-          <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-sgup">{{t9n "signUp"}}</a></p>
+          <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-sgup" class="{{disabled}}">{{t9n "signUp"}}</a></p>
         {{/unless}}
       {{/if}}
     {{else}}
@@ -73,7 +73,7 @@
           </div>
         {{/if}}
         <div class="text-center">
-          <div class="btn btn-lg btn-default" id="at-btn-logout">{{t9n "signOut"}}</div>
+          <div class="btn btn-lg btn-default {{disabled}}" id="at-btn-logout">{{t9n "signOut"}}</div>
         </div>
     {{/unless}}    
   </div>
@@ -108,7 +108,7 @@
       {{#with pwdField}}
         {{> atInput}}
       {{/with}}
-      <div class="btn btn-lg btn-default" id="at-btn">{{t9n "updateYourPassword"}}</div>
+      <div class="btn btn-lg btn-default {{disabled}}" id="at-btn">{{t9n "updateYourPassword"}}</div>
     </form>
   </div>
 </template>
@@ -130,7 +130,7 @@
         {{displayName}} {{#unless required}}({{t9n "optional"}}){{/unless}}
       </label>
     {{/if}}
-    <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}">
+    <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}" {{disabled}}>
     {{#if hasFeedback}}
       <span class="glyphicon glyphicon-remove form-control-feedback {{#unless hasError}}hide{{/unless}}"></span>
     {{/if}}
