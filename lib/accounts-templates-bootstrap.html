@@ -1,10 +1,20 @@
-<template name="loginForm">
+<template name="fullPageSigninForm">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-3">
+          {{> signinForm}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="signinForm">
   <div class="at">
     {{#unless currentUser}}
-      {{#if atfpwd}}
+      {{#if stateIs 'fpwd'}}
         <h3> {{t9n "resetYourPassword"}} </h3>
       {{/if}}
-      {{#if atsgin}}
+      {{#if stateIs 'sgin'}}
         {{#if otherLoginServices}}
           <div class="at-social">
             {{#each loginServices}}
@@ -23,9 +33,9 @@
           </div>
         {{/unless}}
       {{/if}}
-      {{#if atsgup}}
+      {{#if stateIs 'sgup'}}
         <h3>{{t9n "createAccount"}}</h3>
-        <p class="at-signin-cta">{{t9n "ifYouAlreadyHaveAnAccount"}} <a href="#" id="at-sgin">{{t9n "signin"}}</a>.</p>
+        <p class="at-signin-cta">{{t9n "ifYouAlreadyHaveAnAccount"}} <a href="{{signInLink}}" id="at-sgin">{{t9n "signin"}}</a>.</p>
       {{/if}}
       {{#if overallError}}
         <div id="atError">
@@ -41,54 +51,89 @@
         <form role="form" class="at-form">
           {{#each fields}}
             {{#if displayField}}
-              <div class="form-group {{#if hasError}}has-error{{/if}} {{#if hasFeedback}}has-feedback{{/if}}">
-                {{#if displayFormLabels}}
-                  <label for="AT_field_{{name}}" class="control-label">
-                    {{displayName}} {{#unless required}}({{t9n "optional"}}){{/unless}}
-                  </label>
-                {{/if}}
-                <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}">
-                {{#if hasFeedback}}
-                  <span class="glyphicon glyphicon-remove form-control-feedback {{#unless showError}}hide{{/unless}}"></span>
-                {{/if}}
-                <p class="help-block {{#unless showError}}hide{{/unless}}">{{errorText}}</p>
-              </div>     
+              {{> atInput}}
             {{/if}}   
           {{/each}}
-          {{#unless atfpwd}}
-            <p><a href="#" id="at-fpwd">{{t9n "forgotPassword"}}</a></p>
-          {{/unless}}
-          <div class="btn btn-default" id="at-btn">{{buttonText}}</div>
+          {{#if showForgotPassword}}
+            <p><a href="{{forgotPwdLink}}" id="at-fpwd">{{t9n "forgotPassword"}}</a></p>
+          {{/if}}
+          <div class="btn btn-lg btn-default" id="at-btn">{{buttonText}}</div>
         </form>
-        {{#unless atsgup}}
-          <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="#" id="at-sgup">{{t9n "signUp"}}</a></p>
+        {{#unless stateIs 'sgup'}}
+          <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-sgup">{{t9n "signUp"}}</a></p>
         {{/unless}}
       {{/if}}
     {{else}}
         <h3>Hi {{signedInAs}}</h3>
-        <div class="at-social">
-          {{#each loginServices}}
-            {{> atSocial}}
-          {{/each}}
+        {{#if allowMerging}}
+          <div class="at-social">
+            {{#each loginServices}}
+              {{> atSocial}}
+            {{/each}}
+          </div>
+        {{/if}}
+        <div class="text-center">
+          <div class="btn btn-lg btn-default" id="at-btn-logout">{{t9n "signOut"}}</div>
         </div>
-        <div class="btn btn-default" id="at-btn-logout">{{t9n "signOut"}}</div>
     {{/unless}}    
   </div>
 </template>
 
 
+<template name="fullPageResetPassword">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-3">
+          {{> atResetPassword}}
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<template name='atResetPassword'>
+  <div class="at">
+    <h3>{{t9n "resetYourPassword"}}</h3>
+    {{#if overallError}}
+      <div id="atError">
+        <div class='alert alert-danger'>{{overallError}}</div>
+      </div>
+    {{/if}}
+    {{#if result}}
+      <div id="atResult">
+        <div class='alert alert-success'>{{result}}</div>
+      </div>
+    {{/if}}
+    <form role="form" class="at-form">
+      {{#with pwdField}}
+        {{> atInput}}
+      {{/with}}
+      <div class="btn btn-lg btn-default" id="at-btn">{{t9n "updateYourPassword"}}</div>
+    </form>
+  </div>
+</template>
+
 
 <template name='atSocial'>
-  <button class="btn {{disabled}}" id="at-{{this}}" name="{{this}}">
-    {{#if unconfigured}}
-        <i class="{{iconClass}}"></i> {{t9n "configure"}} {{capitalize this}}
-    {{else}}
-        {{#if currentUser}}
-          <i class="{{iconClass}}"></i> Add {{capitalize this}}
-        {{else}}
-          <i class="{{iconClass}}"></i>
-          {{t9n "signIn"}}&nbsp;{{t9n "with"}}&nbsp;{{capitalize this}}
-        {{/if}}
+  {{#if show}}
+        <button class="btn {{disabled}}" id="at-{{this}}" name="{{this}}">
+          <i class="{{iconClass}}"></i> {{buttonText}}
+        </button>
+  {{/if}}
+</template>
+
+
+<template name='atInput'>
+  <div class="form-group {{#if hasError}}has-error{{/if}} {{#if hasFeedback}}has-feedback{{/if}}">
+    {{#if displayFormLabels}}
+      <label for="AT_field_{{name}}" class="control-label">
+        {{displayName}} {{#unless required}}({{t9n "optional"}}){{/unless}}
+      </label>
     {{/if}}
-  </button>
+    <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}">
+    {{#if hasFeedback}}
+      <span class="glyphicon glyphicon-remove form-control-feedback {{#unless hasError}}hide{{/unless}}"></span>
+    {{/if}}
+    <p class="help-block {{#unless hasError}}hide{{/unless}}">{{errorText}}</p>
+  </div>     
 </template>
