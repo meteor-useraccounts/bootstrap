@@ -3,11 +3,9 @@
     "description": "Accounts Templates styled for Twitter Bootstrap.",
     "homepage": "http://accounts-templates.meteor.com",
     "author": "Luca Mussi <ing.luca.mussi@gmail.com> (https://github.com/splendido)",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "git": "https://github.com/splendido/accounts-templates-bootstrap.git",
     "packages": {
-        "accounts-templates-core": {
-      		"git": "https://github.com/splendido/accounts-templates-core.git"
-    	}
+        "accounts-templates-core": "0.0.4"
     }
 }
