@@ -6,7 +6,7 @@ Meteor sign up and sign in templates styled for twitter Bootstrap
 
 This package depends on [accounts-templates-core](https://atmospherejs.com/package/accounts-templates-core)
 
-Learn more at [here](http://accounts-templates.meteor.com) or have a look at a live demo application [here](http://accounts-templates-bootstrap.meteor.com).
+Learn more [here](http://accounts-templates.meteor.com) or have a look at a live demo application [here](http://accounts-templates-bootstrap.meteor.com).
 
 
 Known Issues
