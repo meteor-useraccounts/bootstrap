@@ -48,7 +48,7 @@
         </div>
       {{/if}}
       {{#if passwordLoginService}}
-        <form role="form" class="at-form">
+        <form role="form" id="at-form-login" class="at-form" novalidate>
           {{#each fields}}
             {{#if displayField}}
               {{> atInput}}
@@ -57,7 +57,7 @@
           {{#if showForgotPassword}}
             <p><a href="{{forgotPwdLink}}" id="at-fpwd" class="{{disabled}}">{{t9n "forgotPassword"}}</a></p>
           {{/if}}
-          <div class="btn btn-lg btn-default {{disabled}}" id="at-btn">{{buttonText}}</div>
+          <button type='submit' class="submit btn btn-lg btn-default {{disabled}}" id="at-btn">{{buttonText}}</button>
         </form>
         {{#unless stateIs 'sgup'}}
           <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-sgup" class="{{disabled}}">{{t9n "signUp"}}</a></p>
