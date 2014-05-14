@@ -93,7 +93,12 @@
 
 <template name='atResetPassword'>
   <div class="at">
-    <h3>{{t9n "resetYourPassword"}}</h3>
+    {{#if stateIs 'rpwd'}}
+      <h3>{{t9n "resetYourPassword"}}</h3>
+    {{/if}}
+    {{#if stateIs 'enro'}}
+      <h3>{{t9n "createAccount"}}</h3>
+    {{/if}}
     {{#if overallError}}
       <div id="atError">
         <div class='alert alert-danger'>{{overallError}}</div>
@@ -104,11 +109,18 @@
         <div class='alert alert-success'>{{result}}</div>
       </div>
     {{/if}}
-    <form role="form" class="at-form">
+    <form role="form" id="at-form-pwd" class="at-form">
       {{#with pwdField}}
         {{> atInput}}
       {{/with}}
-      <div class="btn btn-lg btn-default {{disabled}}" id="at-btn">{{t9n "updateYourPassword"}}</div>
+      <button type='submit' class="submit btn btn-lg btn-default {{disabled}}" id="at-btn">
+        {{#if stateIs 'rpwd'}}
+          {{t9n "updateYourPassword"}}
+        {{/if}}
+        {{#if stateIs 'enro'}}
+          {{t9n "createAccount"}}
+        {{/if}}
+      </button>
     </form>
   </div>
 </template>
