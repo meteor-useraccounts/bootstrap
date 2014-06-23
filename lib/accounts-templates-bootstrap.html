@@ -60,7 +60,9 @@
           <button type='submit' class="submit btn btn-lg btn-default {{disabled}}" id="at-btn">{{buttonText}}</button>
         </form>
         {{#unless stateIs 'sgup'}}
-          <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-sgup" class="{{disabled}}">{{t9n "signUp"}}</a></p>
+          {{#if showSignUpLink}}
+            <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-sgup" class="{{disabled}}">{{t9n "signUp"}}</a></p>
+          {{/if}}
         {{/unless}}
       {{/if}}
     {{else}}
