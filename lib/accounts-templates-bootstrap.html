@@ -57,7 +57,7 @@
           {{#if showForgotPassword}}
             <p><a href="{{forgotPwdLink}}" id="at-fpwd" class="{{disabled}}">{{t9n "forgotPassword"}}</a></p>
           {{/if}}
-          <button type='submit' class="submit btn btn-lg btn-default {{disabled}}" id="at-btn">{{buttonText}}</button>
+          <button type='submit' class="submit btn btn-lg btn-default {{submitDisabled}} {{disabled}}" id="at-btn">{{buttonText}}</button>
         </form>
         {{#unless stateIs 'sgup'}}
           {{#if showSignUpLink}}
