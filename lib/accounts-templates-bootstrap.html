@@ -49,15 +49,17 @@
       {{/if}}
       {{#if passwordLoginService}}
         <form role="form" id="at-form-login" class="at-form" novalidate>
-          {{#each fields}}
-            {{#if displayField}}
-              {{> atInput}}
-            {{/if}}   
-          {{/each}}
-          {{#if showForgotPassword}}
-            <p><a href="{{forgotPwdLink}}" id="at-fpwd" class="{{disabled}}">{{t9n "forgotPassword"}}</a></p>
-          {{/if}}
-          <button type='submit' class="submit btn btn-lg btn-default {{submitDisabled}} {{disabled}}" id="at-btn">{{buttonText}}</button>
+          <fieldset {{disabled}}>          
+            {{#each fields}}
+              {{#if displayField}}
+                {{> atInput}}
+              {{/if}}   
+            {{/each}}
+            {{#if showForgotPassword}}
+              <p><a href="{{forgotPwdLink}}" id="at-fpwd" class="{{disabled}}">{{t9n "forgotPassword"}}</a></p>
+            {{/if}}
+            <button type='submit' class="submit btn btn-lg btn-default {{submitDisabled}}" id="at-btn">{{buttonText}}</button>
+          </fieldset>
         </form>
         {{#unless stateIs 'sgup'}}
           {{#if showSignUpLink}}
@@ -112,17 +114,19 @@
       </div>
     {{/if}}
     <form role="form" id="at-form-pwd" class="at-form">
-      {{#with pwdField}}
-        {{> atInput}}
-      {{/with}}
-      <button type='submit' class="submit btn btn-lg btn-default {{disabled}}" id="at-btn">
-        {{#if stateIs 'rpwd'}}
-          {{t9n "updateYourPassword"}}
-        {{/if}}
-        {{#if stateIs 'enro'}}
-          {{t9n "createAccount"}}
-        {{/if}}
-      </button>
+      <fieldset {{disabled}}>
+        {{#with pwdField}}
+          {{> atInput}}
+        {{/with}}
+        <button type='submit' class="submit btn btn-lg btn-default" id="at-btn">
+          {{#if stateIs 'rpwd'}}
+            {{t9n "updateYourPassword"}}
+          {{/if}}
+          {{#if stateIs 'enro'}}
+            {{t9n "createAccount"}}
+          {{/if}}
+        </button>
+      </fieldset>  
     </form>
   </div>
 </template>
@@ -144,7 +148,7 @@
         {{displayName}} {{#unless required}}({{t9n "optional"}}){{/unless}}
       </label>
     {{/if}}
-    <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}" {{disabled}}>
+    <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}">
     {{#if hasFeedback}}
       <span class="glyphicon glyphicon-remove form-control-feedback {{#unless hasError}}hide{{/unless}}"></span>
     {{/if}}
