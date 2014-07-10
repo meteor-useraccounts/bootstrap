@@ -21,8 +21,10 @@
               {{> atSocial}}
             {{/each}}
             {{#if passwordLoginService}}
-              <div class="email-option">
-                <strong class="line-thru or-sign-in">{{t9n "OR"}}</strong>
+              <div class="row email-option">
+                <div class="col-xs-5 vcenter line-thru"></div>
+                <div class="col-xs-2 vcenter"><strong>{{t9n "OR"}}</strong></div>
+                <div class="col-xs-5 vcenter line-thru"></div>
               </div>
             {{/if}}
           </div>

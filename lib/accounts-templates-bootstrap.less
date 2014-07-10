@@ -31,10 +31,6 @@
     line-height: 20px;
   }
 
-  fieldset {
-    margin-top: 40px;
-  }
-
   .at-signin-cta {
     margin-bottom: 30px;
     text-align: center;
@@ -147,44 +143,16 @@
 
 .email-option {
   text-align: center;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 
   .line-thru {
-    display: block;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-size: 12px;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    z-index: 1;
-
-    &:before {
-      width: 40px;
-      height: 10px;
-      background-color: #f5f5f5;
-      content: '';
-      margin: -5px 0 0 -20px;
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      z-index: -1;
-    }
-
-    &:after {
-      border-bottom: 1px solid #999;
-      content: '';
-      display: block;
-      position: absolute;
-      top: 49%;
-      width: 100%;
-      z-index: -2;
-    }
-
-    &.or-sign-in {
-      margin-bottom: 30px;
-    }
+    border-bottom: 1px solid #999;
+    padding-bottom: 7px;
   }
 }
 
