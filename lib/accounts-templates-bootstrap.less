@@ -1,18 +1,10 @@
-.at-logo {
-  width: 300px;
-  margin: auto;
-  margin-top: 40px;
-}
-
 .at {
   float: none;
   margin: auto;
   overflow: auto;
   margin-top: 20px;
-  //background: #fff;
   border-radius: 10px;
   padding: 15px;
-  //color: #444;
 
   a.disabled {
     color: #444;    
@@ -40,149 +32,125 @@
     margin-top: 20px;
     font-size: 13px;
   }
-}
 
+  .at-social {
+    margin-top: 10px;
 
-.at-social {
-  margin-top: 10px;
+    button {
+      display: block;
+      width: 280px;
+      margin: auto;
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      border-radius: 5px;
+      font-size: 16px;
 
+      i {
+        float: left;
+        width: 40px;
+        font-size: 20px;
+        margin-top: 1px;
+        padding-right: 15px;
+        padding-left: 5px;
+        border-right: 1px solid rgba(0,0,0,0.2);
+      }
 
-  button {
-    display: block;
-    width: 280px;
-    margin: auto;
-    margin-bottom: 10px;
-    padding: 8px 10px;
-    border-radius: 5px;
+      &#at-facebook {
+        background: #3B5998;
+        color: #fff;
+        &.disabled {
+          color: #ddd;
+          background: #666666;
+        }
+        &:hover {
+          background: #2C4780;
+        }
+      }
+
+      &#at-linkedin {
+        background: #338AB0;
+        color: #fff;
+        &.disabled {
+          color: #ddd;
+          background: #666666;
+        }
+        &:hover {
+          background: #0571A6;
+        }
+      }
+
+      &#at-twitter {
+        background: #4099FF;
+        color: #fff;
+        &.disabled {
+          color: #ddd;
+          background: #666666;
+        }
+        &:hover {
+          background: #3288EB;
+        }
+      }
+
+      &#at-google {
+        background: #db5a3c;
+        color: #fff;
+        &.disabled {
+          color: #ddd;
+          background: #666666;
+        }
+        &:hover {
+          background: #CA4C2E;
+        }
+      }
+
+      &#at-github {
+        background: #666;
+        color: #fff;
+        &.disabled {
+          color: #ddd;
+          background: #666666;
+        }
+        &:hover {
+          background: #555;
+        }
+      }
+    }
+  }
+
+  .email-option {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    .line-thru {
+      border-bottom: 1px solid #999;
+      padding-bottom: 7px;
+    }
+  }
+
+  .at-form {
+    margin-top: 20px;
+
+    label {
+      margin-bottom: 5px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    #at-btn{
+      font-size: 16px;
+      padding: 10px 12px;
+      margin-top: 30px;
+    }
+  }
+
+  .at-signup-cta {
+    text-align: center;
+    margin-top: 20px;
     font-size: 16px;
-
-    i {
-      float: left;
-      width: 40px;
-      font-size: 20px;
-      margin-top: 1px;
-      padding-right: 15px;
-      padding-left: 5px;
-      border-right: 1px solid rgba(0,0,0,0.2);
-    }
-
-
-    &#at-facebook {
-      background: #3B5998;
-      color: #fff;
-
-      &.disabled {
-        color: #ddd;
-        background: #666666;
-      }
-
-      &:hover {
-        background: #2C4780;
-      }
-    }
-
-    &#at-linkedin {
-      background: #338AB0;
-      color: #fff;
-
-      &.disabled {
-        color: #ddd;
-        background: #666666;
-      }
-
-      &:hover {
-        background: #0571A6;
-      }
-    }
-
-    &#at-twitter {
-      background: #4099FF;
-      color: #fff;
-
-      &.disabled {
-        color: #ddd;
-        background: #666666;
-      }
-
-      &:hover {
-        background: #3288EB;
-      }
-    }
-
-    &#at-google {
-      background: #db5a3c;
-      color: #fff;
-
-      &.disabled {
-        color: #ddd;
-        background: #666666;
-      }
-
-      &:hover {
-        background: #CA4C2E;
-      }
-    }
-
-    &#at-github {
-      background: #666;
-      color: #fff;
-
-      &.disabled {
-        color: #ddd;
-        background: #666666;
-      }
-
-      &:hover {
-        background: #555;
-      }
-    }
-
-
   }
 }
-
-.email-option {
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-
-  .line-thru {
-    border-bottom: 1px solid #999;
-    padding-bottom: 7px;
-  }
-}
-
-.at-form {
-  margin-top: 20px;
-
-  label {
-    margin-bottom: 5px;
-    font-weight: 500;
-    font-size: 14px;
-  }
-
-  input { 
-    background-color: #EEE;
-  }
-
-  div#at-btn div#at-back-btn{
-    font-size: 16px;
-    padding: 10px 12px;
-    margin-top: 25px;
-  }
-}
-
-.at-signup-cta {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 16px;
-}
-
-.at-sign-out {
-  cursor: pointer;
-}
-
