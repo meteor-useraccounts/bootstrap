@@ -20,16 +20,6 @@
           <a href="{{signInLink}}" id="at-sgin" class="{{disabled}}">{{t9n "signin"}}</a>.
         </p>
       {{/if}}
-      {{#if overallError}}
-        <div id="atError">
-          <div class='alert alert-danger'>{{overallError}}</div>
-        </div>
-      {{/if}}
-      {{#if result}}
-        <div id="atResult">
-          <div class='alert alert-success'>{{result}}</div>
-        </div>
-      {{/if}}
       {{#if showLoginServices}}
         <div class="at-social">
           {{#each loginServices}}
@@ -42,6 +32,16 @@
           <div class="col-xs-5 vcenter line-thru"></div>
           <div class="col-xs-2 vcenter"><strong>{{t9n "OR"}}</strong></div>
           <div class="col-xs-5 vcenter line-thru"></div>
+        </div>
+      {{/if}}
+      {{#if overallError}}
+        <div id="atError">
+          <div class='alert alert-danger'>{{overallError}}</div>
+        </div>
+      {{/if}}
+      {{#if result}}
+        <div id="atResult">
+          <div class='alert alert-success'>{{result}}</div>
         </div>
       {{/if}}
       {{#if showPwdService}}
