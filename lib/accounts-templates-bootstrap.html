@@ -17,7 +17,7 @@
       {{#if showSignInLink}}
         <p class="at-signin-cta">
           {{t9n "ifYouAlreadyHaveAnAccount"}} 
-          <a href="{{signInLink}}" id="at-sgin" class="{{disabled}}">{{t9n "signin"}}</a>.
+          <a href="{{signInLink}}" id="at-sgin" class="{{disabled}}">{{t9n "signin"}}</a>
         </p>
       {{/if}}
       {{#if showLoginServices}}
@@ -62,10 +62,24 @@
           <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-sgup" class="{{disabled}}">{{t9n "signUp"}}</a></p>
         {{/if}}
       {{/if}}
+      {{#if showTermsLink}}
+        <p class="at-agreement">
+          {{t9n "clickAgree"}}
+          {{#if privacyUrl}}
+            <a href="{{privacyUrl}}" class="{{disabled}}">{{t9n "privacyPolicy"}}</a>
+          {{/if}}
+          {{#if showTermsAnd}}
+            {{t9n "and"}}
+          {{/if}}
+          {{#if termsUrl}}
+            <a href="{{termsUrl}}" class="{{disabled}}">{{t9n "terms"}}</a>
+          {{/if}}
+        </p>
+      {{/if}}
       {{#if showSignOut}}
-          <div class="text-center">
-            <div class="btn btn-lg btn-default {{disabled}}" id="at-btn-logout">{{t9n "signOut"}}</div>
-          </div>
+        <div class="text-center">
+          <div class="btn btn-lg btn-default {{disabled}}" id="at-btn-logout">{{t9n "signOut"}}</div>
+        </div>
       {{/if}}    
     </div>
   {{/unless}}
@@ -74,9 +88,9 @@
 
 <template name='atSocial'>
   {{#if show}}
-        <button class="btn {{disabled}}" id="at-{{this}}" name="{{this}}">
-          <i class="{{iconClass}}"></i> {{buttonText}}
-        </button>
+    <button class="btn {{disabled}}" id="at-{{this}}" name="{{this}}">
+      <i class="{{iconClass}}"></i> {{buttonText}}
+    </button>
   {{/if}}
 </template>
 
@@ -88,7 +102,7 @@
         {{displayName}} {{#unless required}}({{t9n "optional"}}){{/unless}}
       </label>
     {{/if}}
-    <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}">
+    <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off">
     {{#if hasFeedback}}
       <span class="form-control-feedback glyphicon glyphicon-remove {{#unless hasError}}hide{{/unless}}"></span>
     {{/if}}
