@@ -75,12 +75,7 @@
             <a href="{{termsUrl}}" class="{{disabled}}">{{t9n "terms"}}</a>
           {{/if}}
         </p>
-      {{/if}}
-      {{#if showSignOut}}
-        <div class="text-center">
-          <div class="btn btn-lg btn-default {{disabled}}" id="at-btn-logout">{{t9n "signOut"}}</div>
-        </div>
-      {{/if}}    
+      {{/if}}  
     </div>
   {{/unless}}
 </template>
@@ -96,7 +91,7 @@
 
 
 <template name='atInput'>
-  <div class="form-group {{#if hasError}}has-error{{/if}} {{#if hasFeedback}}has-feedback{{/if}}">
+  <div class="form-group {{#if hasError}}has-error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if hasFeedback}}has-feedback{{/if}}">
     {{#if displayFormLabels}}
       <label class="control-label" for="AT_field_{{name}}">
         {{displayName}} {{#unless required}}({{t9n "optional"}}){{/unless}}
@@ -104,7 +99,8 @@
     {{/if}}
     <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off">
     {{#if hasFeedback}}
-      <span class="form-control-feedback glyphicon glyphicon-remove {{#unless hasError}}hide{{/unless}}"></span>
+      <span class="glyphicon glyphicon-remove form-control-feedback {{#unless hasError}}hide{{/unless}}"></span>
+      <span class="glyphicon glyphicon-ok form-control-feedback {{#unless hasSuccess}}hide{{/unless}}"></span>
     {{/if}}
     <span class="help-block {{#unless hasError}}hide{{/unless}}">{{errorText}}</span>
   </div>     
