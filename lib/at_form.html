@@ -1,14 +1,4 @@
-<template name="fullPageSigninForm">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 col-md-offset-3">
-          {{> signinForm}}
-      </div>
-    </div>
-  </div>
-</template>
-
-<template name="signinForm">
+<template name="atForm">
   {{#unless hide}}
     <div class="at">
       {{#if showTitle}}
@@ -78,30 +68,4 @@
       {{/if}}  
     </div>
   {{/unless}}
-</template>
-
-
-<template name='atSocial'>
-  {{#if show}}
-    <button class="btn {{disabled}}" id="at-{{this}}" name="{{this}}">
-      <i class="{{iconClass}}"></i> {{buttonText}}
-    </button>
-  {{/if}}
-</template>
-
-
-<template name='atInput'>
-  <div class="form-group {{#if hasError}}has-error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if hasFeedback}}has-feedback{{/if}}">
-    {{#if displayFormLabels}}
-      <label class="control-label" for="AT_field_{{name}}">
-        {{displayName}} {{#unless required}}({{t9n "optional"}}){{/unless}}
-      </label>
-    {{/if}}
-    <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off">
-    {{#if hasFeedback}}
-      <span class="glyphicon glyphicon-remove form-control-feedback {{#unless hasError}}hide{{/unless}}"></span>
-      <span class="glyphicon glyphicon-ok form-control-feedback {{#unless hasSuccess}}hide{{/unless}}"></span>
-    {{/if}}
-    <span class="help-block {{#unless hasError}}hide{{/unless}}">{{errorText}}</span>
-  </div>     
 </template>

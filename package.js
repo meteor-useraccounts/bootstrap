@@ -12,9 +12,14 @@ Package.on_use(function(api, where) {
     ], 'client');
 
     api.add_files([
-        'lib/accounts-templates-bootstrap.html',
-        'lib/accounts-templates-bootstrap.js',
-        'lib/accounts-templates-bootstrap.less'
+        'lib/at_form.html',
+        'lib/at_form.js',
+        'lib/at_input.html',
+        'lib/at_input.js',
+        'lib/at_social.html',
+        'lib/at_social.js',
+        'lib/full_page_at_form.html',
+        'lib/at_bootstrap.less'
     ], ['client']);
 
     api.use([
