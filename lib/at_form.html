@@ -7,7 +7,7 @@
       {{#if showSignInLink}}
         <p class="at-signin-cta">
           {{t9n "ifYouAlreadyHaveAnAccount"}} 
-          <a href="{{signInLink}}" id="at-sgin" class="{{disabled}}">{{t9n "signin"}}</a>
+          <a href="{{signInLink}}" id="at-signIn" class="at-link {{disabled}}">{{t9n "signin"}}</a>
         </p>
       {{/if}}
       {{#if showLoginServices}}
@@ -35,13 +35,13 @@
         </div>
       {{/if}}
       {{#if showPwdService}}
-        <form role="form" id="at-form-login" class="at-form" novalidate>
+        <form role="form" id="at-form" class="at-form" novalidate>
           <fieldset {{disabled}}>          
             {{#each fields}}
               {{> atInput}}
             {{/each}}
             {{#if showForgotPasswordLink}}
-              <p><a href="{{forgotPwdLink}}" id="at-fpwd" class="{{disabled}}">{{t9n "forgotPassword"}}</a></p>
+              <p><a href="{{forgotPwdLink}}" id="at-forgotPwd" class="at-link {{disabled}}">{{t9n "forgotPassword"}}</a></p>
             {{/if}}
             <button type='submit' class="submit btn btn-lg btn-block btn-default {{submitDisabled}}" id="at-btn">
               {{buttonText}}
@@ -49,7 +49,7 @@
           </fieldset>
         </form>
         {{#if showSignUpLink}}
-          <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-sgup" class="{{disabled}}">{{t9n "signUp"}}</a></p>
+          <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-signUp" class="at-link {{disabled}}">{{t9n "signUp"}}</a></p>
         {{/if}}
       {{/if}}
       {{#if showTermsLink}}
