@@ -2,14 +2,17 @@
 accounts-templates-bootstrap
 ========================
 
-Meteor sign up and sign in templates styled for twitter Bootstrap
+Meteor sign up and sign in templates (and much more!) styled for twitter Bootstrap
 
 This package depends on [accounts-templates-core](https://atmospherejs.com/package/accounts-templates-core)
 
-Learn more [here](http://accounts-templates.meteor.com) or have a look at a live demo application [here](http://accounts-templates-bootstrap.meteor.com).
+Learn more [here](http://accounts-templates.meteor.com) or have a look at a [live demo application](http://accounts-templates-bootstrap.meteor.com).
 
 
-Known Issues
-============
+Attention!
+==========
 
- * having feedback without labels shows some problems with icon vertical alignment (seems a bug in v3.1, see [here](https://github.com/twbs/bootstrap/issues/12873) )
+Adding this package with `mrt add accounts-templates-bootstrap` does not add any other packages providing Bootstrap. This is to let you choose the flavour you prefer, being it compiled, less, sass, or from CDN!
+
+At the moment it is up to date with Bootstrap 3.2.0.
+ 
