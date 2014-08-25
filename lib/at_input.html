@@ -1,11 +1,13 @@
 <template name='atInput'>
-  <div class="form-group {{#if hasError}}has-error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if hasFeedback}}has-feedback{{/if}}">
+  <div class="form-group {{#if hasError}}has-error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if feedback}}has-feedback{{/if}}">
     <label class="control-label {{#unless showLabels}}sr-only{{/unless}}" for="AT_field_{{name}}">
       {{displayName}} {{#unless required}}({{t9n "optional"}}){{/unless}}
     </label>
     <input type="{{type}}" class="form-control" id="AT_field_{{name}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off">
-    {{#if hasFeedback}}
+    {{#if negativeFeedback}}
       <span class="glyphicon glyphicon-remove form-control-feedback {{#unless hasError}}hide{{/unless}}"></span>
+    {{/if}}
+    {{#if positiveFeedback}}
       <span class="glyphicon glyphicon-ok form-control-feedback {{#unless hasSuccess}}hide{{/unless}}"></span>
     {{/if}}
     <span class="help-block {{#unless hasError}}hide{{/unless}}">{{errorText}}</span>
