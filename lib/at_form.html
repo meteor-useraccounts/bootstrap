@@ -26,16 +26,16 @@
       {{/if}}
       {{#if overallError}}
         <div id="atError">
-          <div class='alert alert-danger'>
-          {{#each overallError}}
-            <p>{{this}}</p>
-          {{/each}}
+          <div class="alert alert-danger">
+            {{#each overallError}}
+              <p>{{this}}</p>
+            {{/each}}
           </div>
         </div>
       {{/if}}
       {{#if result}}
         <div id="atResult">
-          <div class='alert alert-success'>{{result}}</div>
+          <div class="alert alert-success">{{result}}</div>
         </div>
       {{/if}}
       {{#if showPwdService}}
@@ -47,7 +47,7 @@
             {{#if showForgotPasswordLink}}
               <p><a href="{{forgotPwdLink}}" id="at-forgotPwd" class="at-link {{disabled}}">{{t9n "forgotPassword"}}</a></p>
             {{/if}}
-            <button type='submit' class="submit btn btn-lg btn-block btn-default {{submitDisabled}}" id="at-btn">
+            <button type="submit" class="submit btn btn-lg btn-block btn-default {{submitDisabled}}" id="at-btn">
               {{buttonText}}
             </button>
           </fieldset>
@@ -69,7 +69,7 @@
             <a href="{{termsUrl}}" class="{{disabled}}">{{t9n "terms"}}</a>
           {{/if}}
         </p>
-      {{/if}}  
+      {{/if}}
     </div>
   {{/unless}}
 </template>
