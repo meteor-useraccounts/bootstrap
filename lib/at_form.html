@@ -26,7 +26,11 @@
       {{/if}}
       {{#if overallError}}
         <div id="atError">
-          <div class='alert alert-danger'>{{overallError}}</div>
+          <div class='alert alert-danger'>
+          {{#each overallError}}
+            <p>{{this}}</p>
+          {{/each}}
+          </div>
         </div>
       {{/if}}
       {{#if result}}
