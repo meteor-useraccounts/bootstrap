@@ -98,7 +98,7 @@
     ],
     [
       "less",
-      "1.0.5"
+      "1.0.6"
     ],
     [
       "livedata",
@@ -178,7 +178,7 @@
     ],
     [
       "splendido:accounts-templates-core",
-      "0.0.23"
+      "0.0.24"
     ],
     [
       "srp",
