@@ -178,7 +178,7 @@
     ],
     [
       "splendido:accounts-templates-core",
-      "0.0.27"
+      "0.0.28"
     ],
     [
       "srp",
@@ -206,6 +206,6 @@
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.27",
+  "toolVersion": "meteor-tool@1.0.28",
   "format": "1.0"
 }

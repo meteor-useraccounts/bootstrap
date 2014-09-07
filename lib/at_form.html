@@ -10,9 +10,9 @@
           <a href="{{signInLink}}" id="at-signIn" class="at-link {{disabled}}">{{t9n "signin"}}</a>
         </p>
       {{/if}}
-      {{#if showLoginServices}}
+      {{#if showOauthServices}}
         <div class="at-social">
-          {{#each loginServices}}
+          {{#each oauthService}}
             {{> atSocial}}
           {{/each}}
         </div>

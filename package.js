@@ -1,6 +1,6 @@
 Package.describe({
     summary: "Accounts Templates styled for Twitter Bootstrap.",
-    version: "0.0.27",
+    version: "0.0.28",
     name: "splendido:accounts-templates-bootstrap",
     git: "https://github.com/splendido/accounts-templates-bootstrap.git",
 });
@@ -10,7 +10,7 @@ Package.on_use(function(api, where) {
         api.use([
             'service-configuration@1.0.0',
             'accounts-base@1.0.0',
-            'splendido:accounts-templates-core@0.0.27',
+            'splendido:accounts-templates-core@0.0.28',
             'templating@1.0.4',
             'less@1.0.5'
         ], 'client');
@@ -18,11 +18,11 @@ Package.on_use(function(api, where) {
             'service-configuration@1.0.0',
             'accounts-password@1.0.0',
             'accounts-base@1.0.0',
-            'splendido:accounts-templates-core@0.0.27',
+            'splendido:accounts-templates-core@0.0.28',
         ], 'server');
 
         api.imply([
-            'splendido:accounts-templates-core@0.0.27',
+            'splendido:accounts-templates-core@0.0.28',
             'service-configuration',
         ], ['client', 'server']);
     }
@@ -63,7 +63,7 @@ Package.on_test(function(api) {
     if (api.versionsFrom) {
         api.use([
             'splendido:accounts-templates-bootstrap',
-            'splendido:accounts-templates-core@0.0.27',
+            'splendido:accounts-templates-core@0.0.28',
         ]);
     }
     else{
