@@ -19,37 +19,14 @@
       {{#if showResult}}
         {{> atResult}}
       {{/if}}
-      {{#if showPwdService}}
-        <form role="form" id="at-form" class="at-form" novalidate>
-          <fieldset {{disabled}}>          
-            {{#each fields}}
-              {{> atInput}}
-            {{/each}}
-            {{#if showForgotPasswordLink}}
-              <p><a href="{{forgotPwdLink}}" id="at-forgotPwd" class="at-link {{disabled}}">{{t9n "forgotPassword"}}</a></p>
-            {{/if}}
-            <button type="submit" class="submit btn btn-lg btn-block btn-default {{submitDisabled}}" id="at-btn">
-              {{buttonText}}
-            </button>
-          </fieldset>
-        </form>
-        {{#if showSignUpLink}}
-          <p class="at-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{signUpLink}}" id="at-signUp" class="at-link {{disabled}}">{{t9n "signUp"}}</a></p>
-        {{/if}}
+      {{#if showPwdForm}}
+        {{> atPwdForm}}
+      {{/if}}
+      {{#if showSignUpLink}}
+        {{> atSignupLink}}
       {{/if}}
       {{#if showTermsLink}}
-        <p class="at-agreement">
-          {{t9n "clickAgree"}}
-          {{#if privacyUrl}}
-            <a href="{{privacyUrl}}" class="{{disabled}}">{{t9n "privacyPolicy"}}</a>
-          {{/if}}
-          {{#if showTermsAnd}}
-            {{t9n "and"}}
-          {{/if}}
-          {{#if termsUrl}}
-            <a href="{{termsUrl}}" class="{{disabled}}">{{t9n "terms"}}</a>
-          {{/if}}
-        </p>
+        {{> atTermsLink}}
       {{/if}}
     </div>
   {{/unless}}
