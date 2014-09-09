@@ -1,42 +1,23 @@
 <template name="atForm">
   {{#unless hide}}
-    <div class="at">
+    <div class="at-form">
       {{#if showTitle}}
-        <h3>{{title}}</h3>
+        {{> atTitle}}
       {{/if}}
       {{#if showSignInLink}}
-        <p class="at-signin-cta">
-          {{t9n "ifYouAlreadyHaveAnAccount"}} 
-          <a href="{{signInLink}}" id="at-signIn" class="at-link {{disabled}}">{{t9n "signin"}}</a>
-        </p>
+        {{> atSigninLink}}
       {{/if}}
       {{#if showOauthServices}}
-        <div class="at-social">
-          {{#each oauthService}}
-            {{> atSocial}}
-          {{/each}}
-        </div>
+        {{> atOauth}}
       {{/if}}
       {{#if showServicesSeparator}}
-        <div class="row email-option">
-          <div class="col-xs-5 vcenter line-thru"></div>
-          <div class="col-xs-2 vcenter"><strong>{{t9n "OR"}}</strong></div>
-          <div class="col-xs-5 vcenter line-thru"></div>
-        </div>
+        {{> atSep}}
       {{/if}}
-      {{#if overallError}}
-        <div id="atError">
-          <div class="alert alert-danger">
-            {{#each overallError}}
-              <p>{{errorText}}</p>
-            {{/each}}
-          </div>
-        </div>
+      {{#if showError}}
+        {{> atError}}
       {{/if}}
-      {{#if result}}
-        <div id="atResult">
-          <div class="alert alert-success">{{result}}</div>
-        </div>
+      {{#if showResult}}
+        {{> atResult}}
       {{/if}}
       {{#if showPwdService}}
         <form role="form" id="at-form" class="at-form" novalidate>

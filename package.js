@@ -48,12 +48,23 @@ Package.on_use(function(api, where) {
     }
 
     api.add_files([
+        'lib/at_error.html',
+        'lib/at_error.js',
         'lib/at_form.html',
         'lib/at_form.js',
         'lib/at_input.html',
         'lib/at_input.js',
+        'lib/at_oauth.html',
+        'lib/at_oauth.js',
+        'lib/at_result.html',
+        'lib/at_result.js',
+        'lib/at_sep.html',
+        'lib/at_signin_link.html',
+        'lib/at_signin_link.js',
         'lib/at_social.html',
         'lib/at_social.js',
+        'lib/at_title.html',
+        'lib/at_title.js',
         'lib/full_page_at_form.html',
         'lib/at_bootstrap.less'
     ], ['client']);
