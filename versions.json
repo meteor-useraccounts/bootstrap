@@ -2,15 +2,11 @@
   "dependencies": [
     [
       "accounts-base",
-      "1.0.0"
-    ],
-    [
-      "accounts-password",
-      "1.0.0"
+      "1.0.1"
     ],
     [
       "application-configuration",
-      "1.0.0"
+      "1.0.1"
     ],
     [
       "binary-heap",
@@ -37,20 +33,20 @@
       "1.0.2"
     ],
     [
+      "ddp",
+      "1.0.8"
+    ],
+    [
       "deps",
-      "1.0.2"
+      "1.0.3"
     ],
     [
       "ejson",
       "1.0.1"
     ],
     [
-      "email",
-      "1.0.0"
-    ],
-    [
       "follower-livedata",
-      "1.0.0"
+      "1.0.1"
     ],
     [
       "geojson-utils",
@@ -62,7 +58,7 @@
     ],
     [
       "htmljs",
-      "1.0.0-cordova1"
+      "1.0.0"
     ],
     [
       "id-map",
@@ -94,11 +90,7 @@
     ],
     [
       "less",
-      "1.0.6"
-    ],
-    [
-      "livedata",
-      "1.0.0"
+      "1.0.7"
     ],
     [
       "localstorage",
@@ -106,31 +98,27 @@
     ],
     [
       "logging",
-      "1.0.0"
-    ],
-    [
-      "meteor",
       "1.0.2"
     ],
     [
-      "minifiers",
-      "1.0.0"
-    ],
-    [
-      "minimongo",
-      "1.0.1"
-    ],
-    [
-      "mongo-livedata",
+      "meteor",
       "1.0.3"
     ],
     [
-      "npm-bcrypt",
-      "0.7.7"
+      "minifiers",
+      "1.0.2"
+    ],
+    [
+      "minimongo",
+      "1.0.2"
+    ],
+    [
+      "mongo",
+      "1.0.4"
     ],
     [
       "observe-sequence",
-      "1.0.0"
+      "1.0.2"
     ],
     [
       "ordered-dict",
@@ -142,11 +130,11 @@
     ],
     [
       "reactive-dict",
-      "1.0.1"
+      "1.0.2"
     ],
     [
       "reactive-var",
-      "1.0.1-rc0"
+      "1.0.1"
     ],
     [
       "retry",
@@ -154,11 +142,11 @@
     ],
     [
       "routepolicy",
-      "1.0.0-cordova1"
+      "1.0.0"
     ],
     [
       "service-configuration",
-      "1.0.0"
+      "1.0.1"
     ],
     [
       "sha",
@@ -166,22 +154,18 @@
     ],
     [
       "softwarerero:accounts-t9n",
-      "0.0.17"
+      "0.0.19"
     ],
     [
       "spacebars",
-      "1.0.0"
+      "1.0.1"
     ],
     [
       "spacebars-compiler",
-      "1.0.0"
+      "1.0.2"
     ],
     [
       "splendido:accounts-templates-core",
-      "0.0.28"
-    ],
-    [
-      "srp",
       "1.0.0"
     ],
     [
@@ -190,11 +174,11 @@
     ],
     [
       "tracker",
-      "1.0.2-rc0"
+      "1.0.2"
     ],
     [
       "ui",
-      "1.0.1"
+      "1.0.2"
     ],
     [
       "underscore",
