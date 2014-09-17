@@ -58,6 +58,14 @@ Package.on_test(function(api) {
         'splendido:accounts-templates-bootstrap',
         'splendido:accounts-templates-core@0.9.0',
     ]);
-    api.use(['tinytest', 'test-helpers'], ['client', 'server']);
-    api.add_files('tests/accounts-templates-bootstrap_tests.js', ['client', 'server']);
+
+    api.use([
+        'accounts-password',
+        'tinytest',
+        'test-helpers'
+    ], ['client', 'server']);
+
+    api.add_files([
+        'tests/accounts-templates-bootstrap_tests.js'
+    ], ['client', 'server']);
 });
