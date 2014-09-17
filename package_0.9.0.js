@@ -1,22 +1,22 @@
 Package.describe({
     summary: "Accounts Templates styled for Twitter Bootstrap.",
-    version: "0.9.0",
+    version: "1.0.0",
     name: "splendido:accounts-templates-bootstrap",
     git: "https://github.com/splendido/accounts-templates-bootstrap.git",
 });
 
 Package.on_use(function(api, where) {
     api.use([
-        'accounts-templates-core',
+        'splendido:accounts-templates-core@1.0.0',
         'templating',
         'less'
     ], 'client');
     api.use([
-        'accounts-templates-core',
+        'splendido:accounts-templates-core@1.0.0',
     ], 'server');
 
     api.imply([
-        'accounts-templates-core',
+        'splendido:accounts-templates-core@1.0.0',
     ], ['client', 'server']);
 
     api.add_files([
@@ -37,7 +37,6 @@ Package.on_use(function(api, where) {
         'lib/at_result.html',
         'lib/at_result.js',
         'lib/at_sep.html',
-        'lib/at_sep.js',
         'lib/at_signin_link.html',
         'lib/at_signin_link.js',
         'lib/at_signup_link.html',
@@ -55,8 +54,8 @@ Package.on_use(function(api, where) {
 
 Package.on_test(function(api) {
     api.use([
-        'accounts-templates-bootstrap',
-        'accounts-templates-core',
+        'splendido:accounts-templates-bootstrap',
+        'splendido:accounts-templates-core@1.0.0',
     ]);
     api.use(['tinytest', 'test-helpers'], ['client', 'server']);
     api.add_files('tests/accounts-templates-bootstrap_tests.js', ['client', 'server']);

@@ -1,15 +1,15 @@
 <template name="atTermsLink">
   <div class="at-terms-link">
     <p>
-      {{t9n "clickAgree"}}
+      {{text}}
       {{#if privacyUrl}}
-        <a href="{{privacyUrl}}" class="{{disabled}}">{{t9n "privacyPolicy"}}</a>
+        <a href="{{privacyUrl}}" class="{{disabled}}">{{privacyLinkText}}</a>
       {{/if}}
       {{#if showTermsAnd}}
-        {{t9n "and"}}
+        {{and}}
       {{/if}}
       {{#if termsUrl}}
-        <a href="{{termsUrl}}" class="{{disabled}}">{{t9n "terms"}}</a>
+        <a href="{{termsUrl}}" class="{{disabled}}">{{termsLinkText}}</a>
       {{/if}}
     </p>
   </div>
