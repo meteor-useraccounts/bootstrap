@@ -7,16 +7,16 @@ Package.describe({
 
 Package.on_use(function(api, where) {
     api.use([
-        'splendido:accounts-templates-core@0.9.0',
+        'accounts-templates-core',
         'templating',
         'less'
     ], 'client');
     api.use([
-        'splendido:accounts-templates-core@0.9.0',
+        'accounts-templates-core',
     ], 'server');
 
     api.imply([
-        'splendido:accounts-templates-core@0.9.0',
+        'accounts-templates-core',
     ], ['client', 'server']);
 
     api.add_files([
@@ -55,8 +55,8 @@ Package.on_use(function(api, where) {
 
 Package.on_test(function(api) {
     api.use([
-        'splendido:accounts-templates-bootstrap',
-        'splendido:accounts-templates-core@0.9.0',
+        'accounts-templates-bootstrap',
+        'accounts-templates-core',
     ]);
     api.use(['tinytest', 'test-helpers'], ['client', 'server']);
     api.add_files('tests/accounts-templates-bootstrap_tests.js', ['client', 'server']);
