@@ -8,8 +8,8 @@ Package.describe({
 Package.on_use(function(api, where) {
     api.use([
         'splendido:accounts-templates-core@0.9.0',
-        'templating',
-        'less'
+        'templating@1.0.6',
+        'less@1.0.8'
     ], 'client');
     api.use([
         'splendido:accounts-templates-core@0.9.0',
