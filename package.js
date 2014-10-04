@@ -1,6 +1,6 @@
 Package.describe({
     summary: "Accounts Templates styled for Twitter Bootstrap.",
-    version: "0.9.8",
+    version: "0.9.9",
     name: "splendido:accounts-templates-bootstrap",
     git: "https://github.com/splendido/accounts-templates-bootstrap.git",
 });
@@ -18,7 +18,7 @@ Package.on_use(function(api, where) {
     ], ["client", "server"]);
 
     api.imply([
-        "splendido:accounts-templates-core@0.9.8",
+        "splendido:accounts-templates-core@0.9.9",
     ], ["client", "server"]);
 
     api.add_files([
@@ -58,7 +58,7 @@ Package.on_use(function(api, where) {
 Package.on_test(function(api) {
     api.use([
         "splendido:accounts-templates-bootstrap",
-        "splendido:accounts-templates-core@0.9.8",
+        "splendido:accounts-templates-core@0.9.9",
     ]);
 
     api.use([
