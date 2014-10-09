@@ -24,7 +24,7 @@
 }
 
 .at-link.disabled {
-  color: #444;    
+  color: #444;
 }
 
 .at-signin-link {
@@ -33,7 +33,7 @@
 }
 
 .at-error, .at-result {
-  text-align: center; 
+  text-align: center;
 }
 
 .at-oauth {
@@ -122,17 +122,23 @@ button.at-social-btn {
 
 .at-sep {
   text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-
-  .line-thru {
-    border-bottom: 1px solid #999;
-    padding-bottom: 7px;
-  }
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.at-sep:before, .at-sep:after {
+    display: block;
+    content: " ";
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    position: absolute;
+    top: 48%;
+}
+.at-sep:before {
+  left: -60%;
+}
+.at-sep:after {
+  right: -60%;
 }
 
 .at-pwd-form > form {
