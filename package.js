@@ -18,7 +18,7 @@ Package.on_use(function(api, where) {
     ], ["client", "server"]);
 
     api.imply([
-        "splendido:accounts-templates-core@0.9.16-iron-v1.1",
+        "splendido:accounts-templates-core@0.10.0-iron-v1.1",
     ], ["client", "server"]);
 
     api.add_files([
@@ -58,7 +58,7 @@ Package.on_use(function(api, where) {
 Package.on_test(function(api) {
     api.use([
         "splendido:accounts-templates-bootstrap",
-        "splendido:accounts-templates-core@0.9.16-iron-v1.1",
+        "splendido:accounts-templates-core@0.10.0-iron-v1.1",
     ]);
 
     api.use([
