@@ -30,7 +30,7 @@
 <template name="atSelectInput">
   <div class="at-input field">
     <label>{{displayName}}</label>
-    <select id="at-field-{{_id}}" name="at-field-{{_id}}">
+    <select class="form-control" id="at-field-{{_id}}" name="at-field-{{_id}}">
       {{#each values}}
         <option value="{{value}}">{{text}}</option>
       {{/each}}
