@@ -30,16 +30,11 @@
 <template name="atSelectInput">
   <div class="at-input field">
     <label>{{displayName}}</label>
-    <div class="ui fluid selection dropdown">
-      <div class="default text">Select</div>
-      <i class="dropdown icon"></i>
-      <input type="hidden" id="at-field-{{_id}}" name="at-field-{{_id}}">
-      <div class="menu">
-        {{#each values}}
-          <div class="item" data-value="{{value}}">{{text}}</div>
-        {{/each}}
-      </div>
-    </div>
+    <select id="at-field-{{_id}}" name="at-field-{{_id}}">
+      {{#each values}}
+        <option value="{{value}}">{{text}}</option>
+      {{/each}}
+    </select>
   </div>
 </template>
 
