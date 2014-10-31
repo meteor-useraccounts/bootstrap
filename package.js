@@ -28,6 +28,8 @@ Package.on_use(function(api, where) {
         "lib/at_form.js",
         "lib/at_input.html",
         "lib/at_input.js",
+        "lib/at_nav_button.html",
+        "lib/at_nav_button.js",
         "lib/at_oauth.html",
         "lib/at_oauth.js",
         "lib/at_pwd_form.html",
