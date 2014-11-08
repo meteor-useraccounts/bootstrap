@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/useraccounts/bootstrap.svg?branch=master)](https://travis-ci.org/useraccounts/bootstrap)
+[![Build Status](https://travis-ci.org/meteor-useraccounts/bootstrap.svg?branch=master)](https://travis-ci.org/meteor-useraccounts/bootstrap)
 useraccounts:bootstrap
 ======================
 
@@ -6,7 +6,7 @@ Meteor sign up and sign in templates (and much more!) styled for twitter Bootstr
 
 This package depends on [useraccounts:core](https://atmospherejs.com/useraccounts/core)
 
-Learn more [here](http://accounts-templates.meteor.com) or have a look at a [live demo application](http://accounts-templates-bootstrap.meteor.com) or at the full [documentation](https://github.com/useraccounts/core).
+Learn more [here](http://accounts-templates.meteor.com) or have a look at a [live demo application](http://accounts-templates-bootstrap.meteor.com) or at the full [documentation](https://github.com/meteor-useraccounts/core).
 
 
 ## Bring Your Own Bootstrap
@@ -20,4 +20,4 @@ At the moment it is up to date with Bootstrap 3.3.0.
 
 Anyone is welcome to contribute. Fork, make your changes, and then submit a pull request.
 
-Thanks to all those who have contributed code changes to [this package](https://github.com/useraccounts/bootstrap/graphs/contributors) as well as to the [core package](https://github.com/useraccounts/core/graphs/contributors) and all who have helped by submitting bug reports and feature ideas.
+Thanks to all those who have contributed code changes to [this package](https://github.com/meteor-useraccounts/bootstrap/graphs/contributors) as well as to the [core package](https://github.com/meteor-useraccounts/core/graphs/contributors) and all who have helped by submitting bug reports and feature ideas.
