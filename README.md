@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/meteor-useraccounts/bootstrap.svg?branch=master)](https://travis-ci.org/meteor-useraccounts/bootstrap)
+[![Build Status](https://travis-ci.org/meteor-useraccounts/bootstrap?branch=master)](https://travis-ci.org/meteor-useraccounts/bootstrap)
 useraccounts:bootstrap
 ======================
 
