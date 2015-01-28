@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/meteor-useraccounts/bootstrap.svg?branch=master)](https://travis-ci.org/meteor-useraccounts/bootstrap)
-useraccounts:bootstrap
-======================
+
+# useraccounts:bootstrap
 
 Meteor sign up and sign in templates (and much more!) styled for twitter Bootstrap
 
