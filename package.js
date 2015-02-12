@@ -38,6 +38,8 @@ Package.on_use(function(api, where) {
         "lib/at_pwd_form_btn.js",
         "lib/at_pwd_link.html",
         "lib/at_pwd_link.js",
+        "lib/at_reCaptcha.html",
+        "lib/at_reCaptcha.js",
         "lib/at_result.html",
         "lib/at_result.js",
         "lib/at_sep.html",
