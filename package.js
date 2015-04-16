@@ -52,6 +52,8 @@ Package.on_use(function(api, where) {
         "lib/at_social.js",
         "lib/at_terms_link.html",
         "lib/at_terms_link.js",
+        "lib/at_resend_verification_email_link.html",
+        "lib/at_resend_verification_email_link.js",
         "lib/at_title.html",
         "lib/at_title.js",
         "lib/full_page_at_form.html",
