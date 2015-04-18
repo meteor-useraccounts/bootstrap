@@ -1,6 +1,6 @@
 Package.describe({
     summary: "Accounts Templates styled for Twitter Bootstrap.",
-    version: "1.8.1",
+    version: "1.9.0",
     name: "useraccounts:bootstrap",
     git: "https://github.com/meteor-useraccounts/bootstrap.git",
 });
@@ -18,7 +18,7 @@ Package.on_use(function(api, where) {
     ], ["client", "server"]);
 
     api.imply([
-        "useraccounts:core@1.8.1",
+        "useraccounts:core@1.9.0",
     ], ["client", "server"]);
 
     api.add_files([
@@ -52,6 +52,8 @@ Package.on_use(function(api, where) {
         "lib/at_social.js",
         "lib/at_terms_link.html",
         "lib/at_terms_link.js",
+        "lib/at_resend_verification_email_link.html",
+        "lib/at_resend_verification_email_link.js",
         "lib/at_title.html",
         "lib/at_title.js",
         "lib/full_page_at_form.html",
@@ -62,7 +64,7 @@ Package.on_use(function(api, where) {
 Package.on_test(function(api) {
     api.use([
         "useraccounts:bootstrap",
-        "useraccounts:core@1.8.1",
+        "useraccounts:core@1.9.0",
     ]);
 
     api.use([
