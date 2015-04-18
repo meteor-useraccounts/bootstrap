@@ -18,7 +18,7 @@ Package.on_use(function(api, where) {
     ], ["client", "server"]);
 
     api.imply([
-        "useraccounts:core@1.9.0",
+        "useraccounts:core@1.8.1",
     ], ["client", "server"]);
 
     api.add_files([
@@ -64,7 +64,7 @@ Package.on_use(function(api, where) {
 Package.on_test(function(api) {
     api.use([
         "useraccounts:bootstrap",
-        "useraccounts:core@1.9.0",
+        "useraccounts:core@1.8.1",
     ]);
 
     api.use([
