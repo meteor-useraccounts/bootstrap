@@ -35,8 +35,7 @@ var
       container: 'alert alert-success'
     },
     oauth: {
-      button: 'btn btn-block',
-      icon: 'icon'
+      button: 'btn btn-block'
     },
   }
 ;
