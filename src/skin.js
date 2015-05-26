@@ -35,17 +35,13 @@ var
       container: 'alert alert-success'
     },
     oauth: {
-      button: 'btn'
+      button: 'btn btn-block',
+      icon: 'icon'
     },
   }
 ;
 
 
-// Add SUI framework to UserAccounts object
-UALog.trace('Adding Twitter Bootstrap framework to UserAccounts');
-UserAccounts.frameworks.push(frameworkName);
-UserAccounts.currentFramework = frameworkName;
-
 // Apply SUI skin to UserAccounts' modules
-UALog.trace('Apllying skin to UserAccounts');
+UALog.trace('Apllying Twitter Bootstrap skin to UserAccounts');
 UserAccounts.applySkin(frameworkName, frameworkSkin);
