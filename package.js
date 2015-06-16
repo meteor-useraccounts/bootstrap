@@ -9,6 +9,7 @@ Package.on_use(function(api, where) {
   api.versionsFrom('METEOR@1.0');
 
   api.use([
+    'fortawesome:fontawesome@4.3.0',
     'less',
     'templating',
   ], 'client');
