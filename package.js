@@ -10,11 +10,16 @@ Package.on_use(function(api, where) {
 
   api.use([
     'templating',
+    'underscore',
   ], 'client');
 
   api.use([
     'useraccounts:core',
   ], ['client', 'server']);
+
+  // Requires all routing packages loads before this asking for weak dependencies.
+  api.use('useraccounts:flow-routing@1.12.1', ['client', 'server'], {weak: true});
+  api.use('useraccounts:iron-routing@1.12.1', ['client', 'server'], {weak: true});
 
   api.imply([
     'useraccounts:core@1.12.1',
