@@ -16,17 +16,17 @@ Package.describe({
   git: 'https://github.com/meteor-useraccounts/bootstrap.git',
 });
 
-Package.onUse(function(api) {
+Package.onUse(function pkgOnUse(api) {
   api.versionsFrom('METEOR@1.0');
 
   api.imply([
-    'useraccounts:base',
+    'useraccounts:core',
   ], Both);
 
   api.use([
     'jag:pince@0.0.5',
     'templating',
-    'useraccounts:base@2.0.0',
+    'useraccounts:core@2.0.0',
   ], Client);
 
   api.addFiles([
