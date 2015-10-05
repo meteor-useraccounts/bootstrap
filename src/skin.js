@@ -7,40 +7,36 @@
 // ------------------------------------------
 //  Logs the start of execution for this file
 // ------------------------------------------
-UALog.trace('Loading main.js');
+UALog.trace('Loading skin.js');
 
-var
-  frameworkName = 'bootstrap',
-  frameworkSkin = {
+// Apply SUI skin to UserAccounts' modules
+UserAccounts.startup(function addSkin() {
+  UALog.trace('Adding Twitter Bootstrap skin to UserAccounts');
+  UserAccounts.applySkin('bootstrap', {
     /*
     uaForm: {
       container: function() {
         return 'ui large fluid segment';
       }
     },
-    title: {
-      h2: 'ui center aligned dividing header'
-    },
     separator: {
       container: 'ui horizontal divider'
     },
     */
     error: {
-      container: 'alert alert-danger'
+      container: 'alert alert-danger',
     },
     message: {
-      container: 'alert alert-info'
-    },
-    success: {
-      container: 'alert alert-success'
+      container: 'alert alert-info',
     },
     oauth: {
-      button: 'btn btn-block'
+      button: 'btn btn-block',
     },
-  }
-;
-
-
-// Apply SUI skin to UserAccounts' modules
-UALog.trace('Apllying Twitter Bootstrap skin to UserAccounts');
-UserAccounts.applySkin(frameworkName, frameworkSkin);
+    success: {
+      container: 'alert alert-success',
+    },
+    title: {
+      h2: 'text-center',
+    },
+  });
+});
