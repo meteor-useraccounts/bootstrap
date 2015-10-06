@@ -19,9 +19,6 @@ UserAccounts.startup(function addSkin() {
         return 'ui large fluid segment';
       }
     },
-    separator: {
-      container: 'ui horizontal divider'
-    },
     */
     error: {
       container: 'alert alert-danger',
@@ -31,6 +28,9 @@ UserAccounts.startup(function addSkin() {
     },
     oauth: {
       button: 'btn btn-block',
+    },
+    separator: {
+      container: 'text-center text-uppercase',
     },
     success: {
       container: 'alert alert-success',
