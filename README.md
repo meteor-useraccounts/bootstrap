@@ -1,4 +1,4 @@
-[![Meteor Icon](http://icon.meteor.com/package/useraccounts:core)](https://atmospherejs.com/useraccounts/core)
+[![Meteor Icon](http://icon.meteor.com/package/useraccounts:bootstrap)](https://atmospherejs.com/useraccounts/bootstrap)
 [![Build Status](https://travis-ci.org/meteor-useraccounts/bootstrap.svg?branch=master)](https://travis-ci.org/meteor-useraccounts/bootstrap)
 
 # useraccounts:bootstrap
