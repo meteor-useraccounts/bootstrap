@@ -51,59 +51,59 @@ button.at-social-btn i {
   padding-left: 5px;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
-button.at-social-btn#at-facebook {
+button.at-social-btn.at-facebook {
   background: #3B5998;
   color: #fff;
 }
-button.at-social-btn#at-facebook.disabled {
+button.at-social-btn.at-facebook.disabled {
   color: #ddd;
   background: #666666;
 }
-button.at-social-btn#at-facebook:hover {
+button.at-social-btn.at-facebook:hover {
   background: #2C4780;
 }
-button.at-social-btn#at-linkedin {
+button.at-social-btn.at-linkedin {
   background: #338AB0;
   color: #fff;
 }
-button.at-social-btn#at-linkedin.disabled {
+button.at-social-btn.at-linkedin.disabled {
   color: #ddd;
   background: #666666;
 }
-button.at-social-btn#at-linkedin:hover {
+button.at-social-btn.at-linkedin:hover {
   background: #0571A6;
 }
-button.at-social-btn#at-twitter {
+button.at-social-btn.at-twitter {
   background: #4099FF;
   color: #fff;
 }
-button.at-social-btn#at-twitter.disabled {
+button.at-social-btn.at-twitter.disabled {
   color: #ddd;
   background: #666666;
 }
-button.at-social-btn#at-twitter:hover {
+button.at-social-btn.at-twitter:hover {
   background: #3288EB;
 }
-button.at-social-btn#at-google {
+button.at-social-btn.at-google {
   background: #db5a3c;
   color: #fff;
 }
-button.at-social-btn#at-google.disabled {
+button.at-social-btn.at-google.disabled {
   color: #ddd;
   background: #666666;
 }
-button.at-social-btn#at-google:hover {
+button.at-social-btn.at-google:hover {
   background: #CA4C2E;
 }
-button.at-social-btn#at-github {
+button.at-social-btn.at-github {
   background: #666;
   color: #fff;
 }
-button.at-social-btn#at-github.disabled {
+button.at-social-btn.at-github.disabled {
   color: #ddd;
   background: #666666;
 }
-button.at-social-btn#at-github:hover {
+button.at-social-btn.at-github:hover {
   background: #555;
 }
 .at-sep {
@@ -138,7 +138,7 @@ button.at-social-btn#at-github:hover {
   font-weight: 500;
   font-size: 14px;
 }
-#at-btn {
+.at-btn {
   font-size: 16px;
   padding: 10px 12px;
   margin-top: 30px;
