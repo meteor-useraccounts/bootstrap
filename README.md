@@ -14,8 +14,12 @@ Learn more [here](http://useraccounts.meteor.com) or have a look at a [live demo
 
 Adding this package with `meteor add useraccounts:bootstrap` does not add any other packages providing Bootstrap. This is to let you choose the flavour you prefer, being it compiled, less, sass, or from CDN!
 
+[nemo64:bootstrap](https://atmospherejs.com/nemo64/bootstrap) integrates bootstrap into Meteor and lets you configure what parts you need.
+
 At the moment it is up to date with Bootstrap 3.3.0.
 
+## Modals
+Instructions on how to show the sign-in/sign-up templates as [modal dialogs](https://github.com/meteor-useraccounts/bootstrap/issues/25#issuecomment-94272119)
 
 ## Contributing
 
