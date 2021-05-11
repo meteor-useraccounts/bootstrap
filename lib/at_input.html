@@ -4,10 +4,10 @@
 
 <template name="atTextInput">
   <div class="at-input form-floating mb-3 form-group {{#if isValidating}}validating{{/if}} {{#if hasError}}has-error{{/if}} {{#if hasSuccess}}has-success{{/if}} {{#if feedback}}has-feedback{{/if}}">
-    <label for="at-field-{{_id}}">
+    <input type="{{type}}" class="form-control" id="at-field-{{_id}}" name="at-field-{{_id}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off">
+      <label for="at-field-{{_id}}">
       {{displayName}} {{#unless required}}{{optionalText}}{{/unless}}
     </label>
-    <input type="{{type}}" class="form-control" id="at-field-{{_id}}" name="at-field-{{_id}}" placeholder="{{placeholder}}" autocapitalize="none" autocorrect="off">
     {{#if hasIcon}}
       <span class="{{iconClass}} form-control-feedback"></span>
     {{/if}}
